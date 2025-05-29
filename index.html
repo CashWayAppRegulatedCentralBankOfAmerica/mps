@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Telegram UI Clone</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+  <!-- Header -->
+  <div class="flex items-center justify-between p-4 border-b border-gray-700">
+    <div class="flex items-center space-x-2">
+      <div class="w-10 h-10 bg-white rounded-full"></div>
+      <h1 class="text-lg font-bold">11 Stories</h1>
+    </div>
+    <div class="flex space-x-4">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16h.01M12 16h.01M16 16h.01M9 20h6a2 2 0 002-2v-2a9 9 0 10-10 0v2a2 2 0 002 2z"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Birthday Bar -->
+  <div class="px-4 py-2 bg-gray-800 text-sm text-gray-300 flex justify-between items-center">
+    <span>Add your birthday! 🎂</span>
+    <button class="text-gray-400">✕</button>
+  </div>
+
+  <!-- Chat List -->
+  <div class="divide-y divide-gray-800">
+    <!-- Message Row Template -->
+    <div class="flex items-center p-4 hover:bg-gray-800">
+      <img src="https://i.pravatar.cc/40" alt="avatar" class="w-10 h-10 rounded-full mr-4">
+      <div class="flex-1">
+        <div class="flex justify-between">
+          <span class="font-semibold">Esta</span>
+          <span class="text-xs text-gray-400">10:29 PM</span>
+        </div>
+        <p class="text-gray-400 text-sm">Mzima labda wewe</p>
+      </div>
+    </div>
+
+    <!-- Reusable Entry -->
+    <template id="chat-template">
+      <div class="flex items-center p-4 hover:bg-gray-800">
+        <div class="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center text-white mr-4 text-sm font-bold">DA</div>
+        <div class="flex-1">
+          <div class="flex justify-between">
+            <span class="font-semibold">Deleted Account</span>
+            <span class="text-xs text-gray-400">Fri</span>
+          </div>
+          <p class="text-gray-400 text-sm">Deleted Account joined Telegram!</p>
+        </div>
+        <span class="text-xs text-center text-white bg-blue-500 rounded-full w-5 h-5 flex items-center justify-center ml-2">1</span>
+      </div>
+    </template>
+
+    <!-- Static Items -->
+    <div class="flex items-center p-4 hover:bg-gray-800">
+      <div class="w-10 h-10 bg-pink-500 rounded-full flex items-center justify-center text-white mr-4 text-sm font-bold">DA</div>
+      <div class="flex-1">
+        <div class="flex justify-between">
+          <span class="font-semibold">Deleted Account</span>
+          <span class="text-xs text-gray-400">Fri</span>
+        </div>
+        <p class="text-gray-400 text-sm">Deleted Account joined Telegram!</p>
+      </div>
+      <span class="text-xs text-center text-white bg-blue-500 rounded-full w-5 h-5 flex items-center justify-center ml-2">1</span>
+    </div>
+
+    <div class="flex items-center p-4 hover:bg-gray-800">
+      <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white mr-4 text-sm font-bold">DA</div>
+      <div class="flex-1">
+        <div class="flex justify-between">
+          <span class="font-semibold">❄️ Deleted Account</span>
+          <span class="text-xs text-gray-400">Fri</span>
+        </div>
+        <p class="text-gray-400 text-sm">Deleted Account joined Telegram!</p>
+      </div>
+      <span class="text-xs text-center text-white bg-blue-500 rounded-full w-5 h-5 flex items-center justify-center ml-2">1</span>
+    </div>
+
+    <div class="flex items-center p-4 hover:bg-gray-800">
+      <div class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center text-white mr-4 text-sm font-bold">R</div>
+      <div class="flex-1">
+        <div class="flex justify-between">
+          <span class="font-semibold">_Riry</span>
+          <span class="text-xs text-gray-400">Fri</span>
+        </div>
+        <p class="text-gray-400 text-sm">_Riry joined Telegram!</p>
+      </div>
+      <span class="text-xs text-center text-white bg-blue-500 rounded-full w-5 h-5 flex items-center justify-center ml-2">1</span>
+    </div>
+
+    <div class="flex items-center p-4 hover:bg-gray-800">
+      <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white mr-4 text-sm font-bold">DV</div>
+      <div class="flex-1">
+        <div class="flex justify-between">
+          <span class="font-semibold">Dr Victor</span>
+          <span class="text-xs text-gray-400">Fri</span>
+        </div>
+        <p class="text-gray-400 text-sm">Dr Victor joined Telegram!</p>
+      </div>
+      <span class="text-xs text-center text-white bg-blue-500 rounded-full w-5 h-5 flex items-center justify-center ml-2">1</span>
+    </div>
+
+    <!-- More as needed -->
+  </div>
+
+  <!-- Floating Buttons -->
+  <div class="fixed bottom-6 right-6 space-y-3">
+    <button class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center shadow-lg">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536M9 11l3.536 3.536m2.829-2.829a4 4 0 10-5.657 5.657l4.243 4.243a8 8 0 1011.314-11.314l-4.243-4.243a4 4 0 00-5.657 0z"/>
+      </svg>
+    </button>
+    <button class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center shadow-lg">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v16c0 .553.447 1 1 1h14c.553 0 1-.447 1-1V4c0-.553-.447-1-1-1H5c-.553 0-1 .447-1 1zm4 8h8m-4-4v8"/>
+      </svg>
+    </button>
+  </div>
+</body>
+</html>
